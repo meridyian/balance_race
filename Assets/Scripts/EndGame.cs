@@ -5,8 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class EndGame : MonoBehaviour
 {
-    void OnTriggerEnter2D()
+    void OnTriggerEnter2D(Collider2D colInfo)
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        //to be able to specify the objects that can end the game
+        if (colInfo.CompareTag("Collidable"))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+        
     }
 }

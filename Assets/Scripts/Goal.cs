@@ -8,7 +8,7 @@ public class Goal : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D colInfo)
     {
-        if(colInfo.tag == "Player")
+        if(colInfo.CompareTag("Player"))
         {
             Debug.Log("GAME WON :D!!");
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
